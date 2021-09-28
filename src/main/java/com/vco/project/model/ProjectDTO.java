@@ -53,6 +53,8 @@ public class ProjectDTO implements Serializable  {
 	@Column(name="pro_secondarytechnology ")
 	private String projectSecondaryTechnology;
 	
+	@JsonIgnore
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@OneToMany(mappedBy = "project", fetch = FetchType.LAZY)
 	private Set<EmployeeDTO> employee;
 
