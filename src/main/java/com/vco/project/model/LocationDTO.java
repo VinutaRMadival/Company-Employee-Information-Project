@@ -56,6 +56,8 @@ public class LocationDTO
 	@Column(name="contact_name")
 	private String contactName;
 
+	@JsonIgnore
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@OneToMany(mappedBy = "location",fetch = FetchType.LAZY)
 	private Set<EmployeeDTO> employee;
 
