@@ -30,7 +30,9 @@ public class DepartmentDTO
 	
 	@Column(name="department_code")
 	private String departmentCode;
-
+         
+	@JsonIgnore
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@OneToMany(mappedBy = "department",fetch = FetchType.LAZY)
 	private Set<EmployeeDTO> employee;
 	
