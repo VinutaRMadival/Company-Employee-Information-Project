@@ -41,7 +41,9 @@ public class CompanyDTO implements Serializable {
 		
 		@Column(name="company_address")
 		private String companyAddress;
-		
+	
+	   @JsonIgnore
+	  @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	  @OneToMany(mappedBy = "company",fetch = FetchType.LAZY)
 	 
 	    private Set<EmployeeDTO> employee;
